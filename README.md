@@ -2,10 +2,14 @@
 
 An HTTP pager service that can be connected to different channels. When the pager's URL is called, the message is dispatched to all of its channels (currently Gmail, Telegram, and Slack available).
 
-This is inspired by [Knock Knock](https://github.com/huggingface/knockknock), but instead of having to integrate Python code, HTTPager lets you simply make an HTTP call (using cURL, for example).
+This is inspired by [Knock Knock](https://github.com/huggingface/knockknock), but instead of having to integrate Python code, HTTPager lets you simply make an HTTP call (using cURL, for example). As long as the machine can make an HTTP call to an external server, it can page you. **No need to configure email or other messaging services on every machine you administer.** Once you have your **Pager URL**, no more configuration is needed on any machines that will page you. They simply make a cURL GET or POST call to pager URL. There is no authentication when calling a pager; make sure you keep the Pager URL secret if you don't want to be paged by others.
 
-A use-case from [Knock Knock's README](https://github.com/huggingface/knockknock): 
->"When training deep learning models, it is common to use early stopping. Apart from a rough estimate, it is difficult to predict when the training will finish. Thus, it can be interesting to set up automatic notifications for your training. It is also interesting to be notified when your training crashes in the middle of the process for unexpected reasons."
+## Use cases
+
+- You run `apt-update; apt-get upgrade` and want to step away from the terminal. Simply add `apt-update; apt-get upgrade; pageme upgrade finished` to the end of the command and you'll get a page on any channel connected to your pager (my favourite is Telegram) when the upgrade completes.
+
+- A use-case from [Knock Knock's README](https://github.com/huggingface/knockknock):  
+  >"When training deep learning models, it is common to use early stopping. Apart from a rough estimate, it is difficult to predict when the training will finish. Thus, it can be interesting to set up automatic notifications for your training. It is also interesting to be notified when your training crashes in the middle of the process for unexpected reasons."
 
 ## Deployment using Heroku
 
