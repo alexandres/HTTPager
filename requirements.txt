@@ -1,0 +1,7 @@
+Django
+yagmail
+python-telegram-bot
+requests
+django-heroku
+gunicorn
+
