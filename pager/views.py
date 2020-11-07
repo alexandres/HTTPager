@@ -12,4 +12,4 @@ def index(request):
 def page(request, pager_slug):
     pager = Pager.objects.get(slug=pager_slug)
     pager.page(request)
-    return HttpResponse("Done!")
+    return HttpResponse("Done!\n")
